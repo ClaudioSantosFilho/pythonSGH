@@ -816,7 +816,7 @@ def menu_medicos():
             remover_medico()
 
         elif opcao == "0":
-            break
+            return -1
 
         else:
             print("Opção inválida. Tente novamente.")
@@ -846,7 +846,7 @@ def menu_pacientes():
             remover_paciente()
 
         elif opcao == "0":
-            break
+            return -1
 
         else:
             print("Opção inválida. Tente novamente.")
@@ -876,7 +876,7 @@ def menu_prontuarios():
             remover_prontuario_medico()
 
         elif opcao == "0":
-            break
+            return -1
 
         else:
             print("Opção inválida. Tente novamente.")
@@ -907,7 +907,7 @@ def menu_agendamentos():
             remover_agendamento()
 
         elif opcao == "0":
-            break
+            return -1
 
         else:
             print("Opção inválida. Tente novamente.")
