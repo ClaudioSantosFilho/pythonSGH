@@ -1,11 +1,6 @@
 import sqlite3
 from datetime import datetime
 
-medicos = {}
-pacientes = {}
-prontuarios = {}
-agendamentos = {}
-
 def conectar_bd():
     conn = sqlite3.connect('HopitalABC.db')
     cursor = conn.cursor()
@@ -493,7 +488,7 @@ def adicionar_prontuario_medico():
     cursor.execute('SELECT MAX(ID) FROM PRONTUARIOS')
     maxID = cursor.fetchone()[0]
 
-    if maxID == 0:
+    if maxID is None:
         prontuarioIDNovo = 1
 
     else:
@@ -532,9 +527,6 @@ def prontuario_data_validacao():
             prontuarioData = input("Digite a data do agendamento (DD/MM/AAAA): ").strip()
 
             dataFormatada = datetime.strptime(prontuarioData, "%d/%m/%Y")
-
-            if any(prontuarioData == prontuario[1] for prontuario in prontuarios.values()):
-                raise ValueError("Data já agendada. Escolha outra data.")
 
             return dataFormatada.strftime("%d/%m/%Y")
 
@@ -689,7 +681,7 @@ def adicionar_agendamento():
         agendamentoIDNovo = maxID + 1
 
     agendamentoNomePacienteNovo = agendamento_paciente_validacao()
-    agendamentoDataNovo = agendamento_data_validacao()
+    agendamentoDataNovo = agendamento_data_validacao(cursor)
     agendamentoMotivoNovo = agendamento_motivo_validacao()
     agendamentoMedicoNovo = agendamento_medico_preferencia_validacao()
 
@@ -714,14 +706,17 @@ def agendamento_paciente_validacao():
             print("Nome inválido. Tente novamente.")
             print("Voltando...")
 
-def agendamento_data_validacao():
+def agendamento_data_validacao(cursor):
     while True:
         try:
             agendamentoData = input("Digite a data do agendamento (DD/MM/AAAA): ").strip()
 
             dataFormatada = datetime.strptime(agendamentoData, "%d/%m/%Y")
 
-            if any(agendamentoData == agendamento[1] for agendamento in agendamentos.values()):
+            cursor.execute('SELECT DATA FROM AGENDAMENTOS WHERE DATA = ?', (agendamentoData,))
+            data_existente = cursor.fetchone()
+
+            if data_existente:
                 raise ValueError("Data já agendada. Escolha outra data.")
 
             return dataFormatada.strftime("%d/%m/%Y")
@@ -948,6 +943,5 @@ def menu_principal():
         else:
             print("Opção inválida. Tente novamente.")
 
-conectar_bd()
 criar_tabelas()
 menu_principal()
