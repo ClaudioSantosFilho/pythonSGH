@@ -143,7 +143,7 @@ def crm_medico_validacao(cursor):
                 return crmMedicoSTR
 
         except ValueError:
-            print("CRN inválido. Tente novamente.")
+            print("CRM inválido. Tente novamente.")
             print("Voltando...")
 
 def nome_medico_validacao():
@@ -157,7 +157,7 @@ def nome_medico_validacao():
             return nomeMedicoSTR
 
         except ValueError:
-            print("Nome inválido. Tente novamente")
+            print("Nome inválido. Tente novamente.")
             print("Voltando...")
 
 def especialidade_medico_validacao():
@@ -171,7 +171,7 @@ def especialidade_medico_validacao():
             return especialidadeMedicoSTR
 
         except ValueError:
-            print("Especialidade inválida. Tente novamente")
+            print("Especialidade inválida. Tente novamente.")
             print("Voltando...")
 
 def telefone_medico_validacao(cursor):
@@ -198,6 +198,7 @@ def telefone_medico_validacao(cursor):
                 return telefoneMedicoSTR
 
         except ValueError:
+            print("Telefone inválido. Tente novamente.")
             print("Voltando...")
 
 def remover_medico():
@@ -230,7 +231,7 @@ def remover_medico():
                 return crmPesquisadoSTR
 
             except ValueError:
-                print("CRM inválido.")
+                print("CRM inválido. Tente novamente.")
                 print("voltando...")
 
     else:
@@ -281,6 +282,7 @@ def pesquisar_paciente():
                 return cpfPesquisado
 
             except ValueError:
+                print("CPF inválido. Tente novamente.")
                 print("Voltando...")
 
     else:
@@ -338,7 +340,7 @@ def nome_paciente_validacao():
             return nomePacienteSTR
 
         except ValueError:
-            print("Nome inválido. Tente novamente")
+            print("Nome inválido. Tente novamente.")
             print("Voltando...")
 
 def idade_paciente_validacao():
@@ -363,7 +365,7 @@ def endereco_paciente_validacao():
             return enderecoPacienteSTR
 
         except ValueError:
-            print("Endereço inválido. Tente novamente")
+            print("Endereço inválido. Tente novamente.")
             print("Voltando...")
 
 def telefone_paciente_validacao(cursor):
@@ -388,7 +390,7 @@ def telefone_paciente_validacao(cursor):
                 return telefonePacienteSTR
 
         except ValueError:
-            print("Telefone inválido. Tente novamente")
+            print("Telefone inválido. Tente novamente.")
             print("Voltando...")
 
 def remover_paciente():
@@ -518,7 +520,7 @@ def prontuario_nome_paciente_validacao():
             return prontuarioNomePaciente
 
         except ValueError:
-            print("Nome inválido. Tente novamente")
+            print("Nome inválido. Tente novamente.")
             print("Voltando...")
 
 def prontuario_data_validacao():
@@ -545,7 +547,7 @@ def prontuario_nome_medico_validacao():
             return prontuarioNomeMedico
 
         except ValueError:
-            print("Nome inválido. Tente novamente")
+            print("Nome inválido. Tente novamente.")
             print("Voltando...")
 
 def prontuario_enfermidade_validacao():
@@ -559,7 +561,7 @@ def prontuario_enfermidade_validacao():
             return prontuarioEnfermidade
 
         except ValueError:
-            print("Texto inválido. Tente novamente")
+            print("Texto inválido. Tente novamente.")
             print("Voltando...")
 
 def prontuario_tratamento_validacao():
@@ -573,7 +575,7 @@ def prontuario_tratamento_validacao():
             return prontuarioTratamento
 
         except ValueError:
-            print("Texto inválido. Tente novamente")
+            print("Texto inválido. Tente novamente.")
             print("Voltando...")
 
 def remover_prontuario_medico():
