@@ -913,7 +913,8 @@ def menu_agendamentos():
             print("Opção inválida. Tente novamente.")
 
 def menu_principal():
-    while True:
+    continuar = True
+    while continuar:
         print("\n===== MENU PRINCIPAL =====")
         print("1 - Médicos")
         print("2 - Pacientes")
@@ -937,8 +938,9 @@ def menu_principal():
             menu_agendamentos()
 
         elif opcao == "0":
+            print("Obrigado por usar o sistema!")
             print("Saindo do sistema...")
-            break
+            continuar = False
 
         else:
             print("Opção inválida. Tente novamente.")
