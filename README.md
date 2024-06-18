@@ -23,8 +23,8 @@ Projeto Final:
 - Pesquisar Médico por CRM
 - Excluir Paciente pelo CPF
 - Excluir Médico pelo CRM
-- Agendar Consulta (ID, NomeMédico, Data, NomePaciente, Enfermidade, Tratamento)
-- Registrar Procedimento Médico (ID, NomeCliente, Data, MovitoAgendamento, MédicoPreferência)
+- Agendar Consulta (ID, NomeCliente, Data, MovitoAgendamento, MédicoPreferência)
+- Registrar Procedimento Médico (ID, NomeMédico, Data, NomePaciente, Enfermidade, Tratamento)
 - Sair do sistema
 - Validações tanto na parte de adicionar varios pacientes e medicos com o mesmo codigo
 - Feedbacks
