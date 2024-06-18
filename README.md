@@ -6,7 +6,7 @@ Projeto inicial:
 - Adicionar paciente (CPF, nome, idade, endereço, telefone)
 - Adicionar médico (código, nome, especialidade, CRM, telefone)
 - Pesquisar paciente por codigo
-- Pesquisar médio por códgio
+- Pesquisar médico por códgio
 - Excluir paciente pelo código
 - Excluir médico pelo código
 - Sair do sistema
