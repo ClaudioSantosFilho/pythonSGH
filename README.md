@@ -1,4 +1,4 @@
-# Esse Projeto vai ser divido em duas partes, a primeira sendo um Sistema de Gestão Hostipitar e a segunda sendo esse sistema integrato a banco de dados
+# Esse Projeto vai ser divido em duas partes, a primeira sendo um Sistema de Gestão Hostipitar e a segunda sendo esse sistema integrado a banco de dados
 
 Projeto inicial:
 
